@@ -40,7 +40,7 @@ withdrawBtn.addEventListener("click", function () {
     const withdrawAmount = document.getElementById("withdrawAmount").value;
     if (withdrawAmount == "" || withdrawAmount < 0) 
     {
-        alert("Please write a valid amount");
+        alert("Please write a valid amount")
         withdrawAmount = 0;
     }
     const withdrawAmountNumber = parseFloat(withdrawAmount);
