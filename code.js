@@ -12,6 +12,11 @@ loginBtn.addEventListener("click", function () {
 const depositBtn = document.getElementById("addDeposit")
 depositBtn.addEventListener("click", function () {
     const depositAmount = document.getElementById("depositAmount").value;
+    if (depositAmount == "" || depositAmount < 0)
+    {
+        alert("Please write a valid amount");
+        depositAmount = 0;
+    }
     const depositNumber = parseFloat(depositAmount);
     const currentDeposit = document.getElementById("currentDeposit").innerText;
     // console.log(currentDeposit);
@@ -33,6 +38,11 @@ depositBtn.addEventListener("click", function () {
 const withdrawBtn = document.getElementById("addWithdraw");
 withdrawBtn.addEventListener("click", function () {
     const withdrawAmount = document.getElementById("withdrawAmount").value;
+    if (withdrawAmount == "" || withdrawAmount < 0) 
+    {
+        alert("Please write a valid amount");
+        withdrawAmount = 0;
+    }
     const withdrawAmountNumber = parseFloat(withdrawAmount);
 
     const currentWithdraw = document.getElementById("currentWithdraw").innerText;
