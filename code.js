@@ -48,11 +48,16 @@ withdrawBtn.addEventListener("click", function () {
     const currentWithdraw = document.getElementById("currentWithdraw").innerText;
     const currentWithdrawNumber = parseFloat(currentWithdraw);
     const totalwithdraw = withdrawAmountNumber + currentWithdrawNumber;
-    document.getElementById("currentWithdraw").innerText = totalwithdraw;
 
     const currentBalance = document.getElementById("currentBalance").innerText;
     const currentBalanceNumber = parseFloat(currentBalance);
     const totalBalance = currentBalanceNumber - withdrawAmountNumber;
+    if (totalBalance < 0 ){
+        alert("Your balance is not sufficient")
+        totalwithdraw = currentWithdrawNumber;
+        totalBalance = currentBalanceNumber;
+    }
+    document.getElementById("currentWithdraw").innerText = totalwithdraw;
     document.getElementById("currentBalance").innerText = totalBalance;
 
     document.getElementById("withdrawAmount").value = "";
