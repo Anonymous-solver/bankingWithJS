@@ -6,6 +6,14 @@ loginBtn.addEventListener("click", function () {
     transactionArea.style.display = "block";
     const name = document.getElementById("name1").value;
     document.getElementById("name").innerText = name;
+    const time = new Date().getHours();
+    let greet = "Null";
+    if (time >= 6 && time <= 11) greet = "Morning";
+    else if (time >= 12 && time <= 15) greet = "Noon";
+    else if (time >= 16 && time <= 18) greet = "Afternoon";
+    else if (time >= 19 && time <= 21) greet = "Evening";
+    else if (time >= 22 || time <= 5 ) greet = "Night";
+    document.getElementById("day").innerText = greet;
 })
 
 //deposit button handler
